@@ -43,11 +43,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Iesi.Collections">
-      <HintPath>..\..\DLL\Iesi.Collections.dll</HintPath>
+      <HintPath>..\Librerías\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="NHibernate">
-      <HintPath>..\..\DLL\NHibernate.dll</HintPath>
+      <HintPath>..\Librerías\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -72,6 +72,8 @@
     <EmbeddedResource Include="Dominio\Pregunta.hbm.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Content Include="Libreria\Iesi.Collections.dll" />
+    <Content Include="Libreria\NHibernate.dll" />
     <Content Include="PreguntaService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -97,6 +99,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\PreguntaService - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\PreguntaService - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
