@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="ProyectoPregunta"
+                   namespace="ProyectoPregunta.Dominio"
+                   default-lazy="false">
+  <class name="Curso" table="t_curso">
+    <id name="IdCurso" column="IdCurso">
+      <generator class="increment" />
+    </id>
+    <property name="Nombre" column="Nombre" />
+    <property name="Tema" column="Tema" />
+  </class>
+</hibernate-mapping>
