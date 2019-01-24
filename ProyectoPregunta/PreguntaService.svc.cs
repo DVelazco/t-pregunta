@@ -27,7 +27,7 @@ namespace ProyectoPregunta
                     new PreguntaExistente()
                     {
                         CodigoError = 10,
-                        MensajeError = "la pregunta con ID pregunta " + IDPregunta + " no existe."
+                        MensajeError = "la pregunta con ID  " + IDPregunta + " no existe."
                     }, new FaultReason("Error al obtener pregunta."));
             }
 
