@@ -14,11 +14,22 @@ namespace ProyectoPregunta
     public interface IPreguntaService
     {
         [OperationContract]
-        [FaultContract(typeof(PreguntaExistente))]
+        [FaultContract(typeof(ErrorPresentado))]
         Pregunta preguntar(int IDPregunta);
 
         [OperationContract]
-        ICollection<Pregunta> ListarPreguntas();
+        [FaultContract(typeof(ErrorPresentado))]
+        Pregunta crear(string IDAlumno, int IDcurso, string Descripcion, string Nivel, string respuesta);
+
+        [OperationContract]
+        [FaultContract(typeof(ErrorPresentado))]
+        Curso ObtenerCurso(int IDCurso);
+
+        [OperationContract]
+        ICollection<Curso> ListarCurso();
+
+        [OperationContract]
+        ICollection<Pregunta> ListarPregunta();
     }
 
 

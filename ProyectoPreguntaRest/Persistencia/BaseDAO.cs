@@ -4,13 +4,13 @@ using System.Linq;
 using System.Web;
 using NHibernate;
 
-namespace ProyectoPregunta.Persistencia
+namespace ProyectoPreguntaRest.Persistencia
 {
-    public class BaseDAO<Entidad, Id> 
+    public class BaseDAO<Entidad, Id>
     {
         public Entidad Crear(Entidad entidad)
         {
-            using (ISession sesion = ProyectoPregunta.Persistencia.NHibernateHelper.ObtenerSesion())
+            using (ISession sesion = ProyectoPreguntaRest.Persistencia.NHibernateHelper.ObtenerSesion())
             {
                 sesion.Save(entidad);
                 sesion.Flush();

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="158adbbe-310a-4053-9521-3faaa45ea667" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:35798/PreguntaService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PreguntaService.xsd" MetadataType="Schema" ID="0bd0aeda-f54b-47de-9f76-4c53da0b89d5" SourceId="1" SourceUrl="http://localhost:35798/PreguntaService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PreguntaService1.xsd" MetadataType="Schema" ID="a096ee39-8754-41e3-aef0-23a795a1adcc" SourceId="1" SourceUrl="http://localhost:35798/PreguntaService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PreguntaService.wsdl" MetadataType="Wsdl" ID="f2f90772-4ece-4953-8901-07637ac6eb1f" SourceId="1" SourceUrl="http://localhost:35798/PreguntaService.svc?wsdl" />
+    <MetadataFile FileName="PreguntaService2.xsd" MetadataType="Schema" ID="c00d397f-9859-45ff-a460-c029b5b89cec" SourceId="1" SourceUrl="http://localhost:35798/PreguntaService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PreguntaService.disco" MetadataType="Disco" ID="ac8b7394-ed87-48db-b7f2-c4d171f46ac9" SourceId="1" SourceUrl="http://localhost:35798/PreguntaService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

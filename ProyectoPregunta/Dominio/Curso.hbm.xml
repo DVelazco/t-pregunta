@@ -5,7 +5,7 @@
                    default-lazy="false">
   <class name="Curso" table="t_curso">
     <id name="IdCurso" column="IdCurso">
-      <generator class="increment" />
+      <generator class="identity" />
     </id>
     <property name="Nombre" column="Nombre" />
     <property name="Tema" column="Tema" />

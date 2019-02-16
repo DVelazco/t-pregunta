@@ -14,34 +14,80 @@ namespace ProyectoPregunta
     public class PreguntaService : IPreguntaService
     {
         private cursoDAO cursoDAO = new cursoDAO();
-        private preguntaDAO preguntaDAO = new preguntaDAO();
 
-        public string IDcurso { get; private set; }
+        private preguntaDAO preguntaDAO = new preguntaDAO();
 
         public Pregunta preguntar(int IDPregunta)
         {
-            Pregunta pregunta = preguntaDAO.Obtener(IDPregunta);
-            if (pregunta == null)
+            try
             {
-                throw new FaultException<PreguntaExistente>(
-                    new PreguntaExistente()
-                    {
-                        CodigoError = 10,
-                        MensajeError = "la pregunta con ID  " + IDPregunta + " no existe."
-                    }, new FaultReason("Error al obtener pregunta."));
+                Pregunta pregunta = preguntaDAO.Obtener(IDPregunta);
+                if (pregunta == null)
+                {
+                    throw new FaultException(new FaultReason("No existe una pregunta con ese id especifico"), new FaultCode("10"));
+                }
+
+                return pregunta;
             }
-
-            return pregunta;
+            catch (Exception ex)
+            {
+                throw new FaultException(new FaultReason("Error al obtener pregunta: " + ex.Message.ToString()), new FaultCode("0"));
+            }
         }
 
-        public ICollection<Pregunta> ListarPreguntas()
+        public Pregunta crear(string IDAlumno, int IDcurso, string Descripcion, string Nivel, string respuesta)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (IDcurso == 0)
+                {
+                    throw new FaultException(new FaultReason("El curso no existe"), new FaultCode("20"));
+                }
+
+                Pregunta pregunta = new Pregunta();
+
+                pregunta.IDAlumno = IDAlumno;
+                pregunta.IDCurso = IDcurso;
+                pregunta.Descripcion = Descripcion;
+                pregunta.Nivel = Nivel;
+                pregunta.respuesta = respuesta;
+
+                pregunta = preguntaDAO.Crear(pregunta);
+
+                return pregunta;
+            }
+            catch (Exception ex)
+            {
+                throw new FaultException(new FaultReason("Error al crear pregunta: " + ex.Message.ToString()), new FaultCode("0"));
+            }
         }
 
-        public Pregunta preguntar(int IDPregunta, List<Pregunta> PreguntaExistente)
+        public Curso ObtenerCurso(int IDCurso)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Curso curso = cursoDAO.Obtener(IDCurso);
+                if (curso == null)
+                {
+                    throw new FaultException(new FaultReason("No existe un curso con ese parametro"), new FaultCode("30"));
+                }
+
+                return curso;
+            }
+            catch (Exception ex)
+            {
+                throw new FaultException(new FaultReason("Error al obtener curso: " + ex.Message.ToString()), new FaultCode("00"));
+            }
+        }
+
+        public ICollection<Curso> ListarCurso()
+        {
+          return cursoDAO.ListarTodos();
+        }
+
+        public ICollection<Pregunta> ListarPregunta()
+        {
+            return preguntaDAO.ListarTodos();
         }
     }
 

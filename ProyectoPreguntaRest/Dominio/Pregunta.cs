@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Web;
+using System.Runtime.Serialization;
 
-namespace ProyectoPregunta.Dominio
+namespace ProyectoPreguntaRest.Dominio
 {
     [DataContract]
     public class Pregunta
@@ -14,7 +14,7 @@ namespace ProyectoPregunta.Dominio
         [DataMember]
         public int IDCurso { get; set; }
         [DataMember]
-        public string IDAlumno { get; set; }
+        public int IDAlumno { get; set; }
         [DataMember]
         public string Nivel { get; set; }
         [DataMember]
@@ -22,6 +22,6 @@ namespace ProyectoPregunta.Dominio
         [DataMember]
         public string respuesta { get; set; }
 
-       
+
     }
 }
